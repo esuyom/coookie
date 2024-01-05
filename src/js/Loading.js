@@ -1,5 +1,5 @@
 /**
- * 로딩중
+ * 로딩
  */
 
 import Phaser from 'phaser';
