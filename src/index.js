@@ -1,3 +1,6 @@
+/**
+ * 기본설정
+ */
 import './css/index.css';
 
 import Phaser from 'phaser';
