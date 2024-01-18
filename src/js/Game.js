@@ -52,7 +52,7 @@ export default class Game extends Phaser.Scene {
             this.cookie.body.setVelocity(0, 400);
             // 쿠키 먹었을때
             this.physics.add.overlap(this.monster, this.cookie, this.eatCookie, null, this);
-        }, 1500);
+        }, 1600);
 
         // 거미 생성
         setTimeout(() => {
@@ -64,7 +64,7 @@ export default class Game extends Phaser.Scene {
                 this.spider.body.setVelocity(0, 600);
                 // 거미 먹었을때
                 this.physics.add.overlap(this.monster, this.spider, this.eatSpider, null, this);
-            }, 800);
+            }, 600);
         }, 6000);
         
         // 몬스터 생성
