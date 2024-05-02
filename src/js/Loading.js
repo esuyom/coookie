@@ -3,6 +3,7 @@
  */
 
 import Phaser from 'phaser';
+import bg from '../assets/bg.jpg';
 
 export default class Loading extends Phaser.Scene {
 
@@ -11,6 +12,7 @@ export default class Loading extends Phaser.Scene {
     }
 
     preload(){
+        this.load.image('bg', bg);
     }
 
     create(){
@@ -26,7 +28,16 @@ export default class Loading extends Phaser.Scene {
             x : x + width/2,
             y : y + height/2
         };
-        
+        // 배경
+        this.bg = this.add.tileSprite(
+            0,
+            0,
+            width,
+            height,
+            "bg"
+        );
+        this.bg.setOrigin(0, 0);
+
         //제목
         this.title = this.add.text(
             center.x, //x위치
@@ -34,11 +45,11 @@ export default class Loading extends Phaser.Scene {
             'D r o p\nC o o k i e'//제목
         )
         .setFontFamily('Arial')
-        .setFill("#894d14")
+        .setFill("#f9bb00")
         .setFontSize(titleFontSize)
         .setOrigin(0.5)
         .setDepth(999)
-        .setStroke('#000', 5)
+        .setStroke('#fff', 5)
         .setAlign('center');
 
         //클릭메세지
@@ -47,7 +58,7 @@ export default class Loading extends Phaser.Scene {
             height * 4 / 5,
             'Click to start'
         )
-        .setFill("#894d14")
+        .setFill("#f9bb00")
         .setFontFamily('Arial')
         .setFontSize(clickToStartFontSize)
         .setOrigin(0.5)

@@ -29,7 +29,7 @@ const config = {
         width:width,//비율설정용 폭
         height:height,//비율설정용 높이
     },
-    backgroundColor: '#9ff4dd',
+    backgroundColor: '#fff',
     //장면 설정
     scene:[Loading, Game, GameOver]
 }

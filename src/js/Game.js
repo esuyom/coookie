@@ -3,6 +3,7 @@
  */
 
 import Phaser from 'phaser';
+import bg from '../assets/bg.jpg';
 import cookie1 from '../assets/cookie1.png';
 import cookie2 from '../assets/cookie2.png';
 import monster from '../assets/monster.png';
@@ -16,6 +17,7 @@ export default class Game extends Phaser.Scene {
     }
 
     preload(){
+        this.load.image('bg', bg);
         this.load.image('monster', monster);
         this.textures.addBase64('cookie1', cookie1);
         this.textures.addBase64('cookie2', cookie2);
@@ -28,6 +30,17 @@ export default class Game extends Phaser.Scene {
             y : y + height/2
         };
         
+        // 배경
+        this.bg = this.add.tileSprite(
+            0,
+            0,
+            width,
+            height,
+            "bg"
+        );
+        this.bg.setOrigin(0, 0);
+        
+
         // 점수 생성
         this.score = 0;
         this.scoreText = this.add.text(0, 0, 'Score:'+this.score, { fontSize: '25px', fill: '#fff' }).setStroke('#000', 5);
